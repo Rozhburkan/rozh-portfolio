@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rozh Burkan AbdulSamad | IT Specialist & Tech Consultant</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0a0d14',
+                        cardbg: '#121722',
+                        cardborder: '#1e2638',
+                        accent: '#00f0ff',
+                        accenthover: '#00c8d6',
+                        accentglow: 'rgba(0, 240, 255, 0.15)',
+                        subtext: '#94a3b8'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0d14;
+            color: #f1f5f9;
+        }
+        .glow-accent {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+        }
+        .glow-accent-hover:hover {
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.35);
+        }
+        .tech-grid-bg {
+            background-image: radial-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0d14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e2638;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f0ff;
+        }
+    </style>
+</head>
+<body class="tech-grid-bg antialiased selection:bg-accent selection:text-black min-h-screen flex flex-col justify-between">
+
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-darkbg/80 backdrop-blur-md border-b border-cardborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo / Brand -->
+                <a href="#hero" class="flex items-center space-x-2 group">
+                    <span class="text-accent font-mono font-bold text-xl">&lt;RB/&gt;</span>
+                    <span class="font-bold tracking-tight text-white group-hover:text-accent transition duration-200">Rozh Burkan</span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-subtext hover:text-accent transition">About</a>
+                    <a href="#expertise" class="text-subtext hover:text-accent transition">Expertise</a>
+                    <a href="#showcase" class="text-subtext hover:text-accent transition">Skills & Projects</a>
+                    <a href="#services" class="text-subtext hover:text-accent transition">Services</a>
+                    <a href="#contact" class="text-subtext hover:text-accent transition">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-black bg-accent rounded-md hover:bg-accenthover transition shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                        Get In Touch
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-subtext hover:text-white focus:outline-none" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile dropdown menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardbg border-b border-cardborder px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-subtext hover:text-accent hover:bg-cardborder/50">About</a>
+            <a href="#expertise" class="block px-3 py-2 rounded-md text-base font-medium text-subtext hover:text-accent hover:bg-cardborder/50">Expertise</a>
+            <a href="#showcase" class="block px-3 py-2 rounded-md text-base font-medium text-subtext hover:text-accent hover:bg-cardborder/50">Skills & Projects</a>
+            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-subtext hover:text-accent hover:bg-cardborder/50">Services</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-subtext hover:text-accent hover:bg-cardborder/50">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow pt-16">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
+            <div class="max-w-4xl mx-auto text-center z-10">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accentglow border border-accent/30 text-accent text-xs font-mono mb-6">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-ping"></span>
+                    <span>Available for Tech Consulting & Freelance</span>
+                </div>
+                
+                <!-- Hero Profile Photo Frame -->
+                <div class="mx-auto mb-6 w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-cardbg border-2 border-accent p-1 shadow-[0_0_25px_rgba(0,240,255,0.25)] relative group overflow-hidden">
+                    <!-- Replace the src URL below with your actual photo image link -->
+                    <img id="hero-profile-img" src="blueAnime.jpg" alt="Rozh Burkan AbdulSamad" class="w-full h-full object-cover rounded-full transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/400x400/121722/00f0ff?text=Rozh+Burkan';">
+                    <div class="absolute inset-0 bg-darkbg/60 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center rounded-full">
+                        <span class="text-[10px] font-mono text-accent">Profile Photo</span>
+                    </div>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-none mb-4">
+                    Rozh Burkan AbdulSamad
+                </h1>
+
+                <p class="text-xl sm:text-2xl text-accent font-mono font-medium mb-6">
+                    <span id="typing-text">IT Specialist, Web Developer & Tech Consultant</span>
+                </p>
+
+                <p class="text-subtext text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Delivering end-to-end technological solutions ranging from enterprise network architecture and hardware troubleshooting to high-impact web applications and data-driven social media growth.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-3 rounded-lg bg-accent text-black font-bold text-sm hover:bg-accenthover transition shadow-[0_0_20px_rgba(0,240,255,0.4)] flex items-center justify-center space-x-2">
+                        <span>Consult With Me</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#expertise" class="w-full sm:w-auto px-8 py-3 rounded-lg bg-cardbg border border-cardborder text-white font-semibold text-sm hover:border-accent/50 hover:bg-cardborder/50 transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-layer-group text-accent"></i>
+                        <span>Explore Expertise</span>
+                    </a>
+                </div>
+
+                <!-- Stats Highlight Bar -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8 border-t border-cardborder/60">
+                    <div class="p-4 rounded-xl bg-cardbg/40 border border-cardborder">
+                        <div class="text-2xl font-extrabold text-white font-mono">CIS College</div>
+                        <div class="text-xs text-subtext mt-1">Information Tech Student</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-cardbg/40 border border-cardborder">
+                        <div class="text-2xl font-extrabold text-accent font-mono">Full-Stack</div>
+                        <div class="text-xs text-subtext mt-1">Web & Database Dev</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-cardbg/40 border border-cardborder">
+                        <div class="text-2xl font-extrabold text-white font-mono">Multi-Platform</div>
+                        <div class="text-xs text-subtext mt-1">Network & SysAdmin</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-cardbg/40 border border-cardborder">
+                        <div class="text-2xl font-extrabold text-accent font-mono">Meta Ads</div>
+                        <div class="text-xs text-subtext mt-1">Social Growth Strategy</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="py-20 bg-cardbg/30 border-y border-cardborder">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left: Profile Badge/Card -->
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-2xl bg-cardbg border border-cardborder p-8 glow-accent-hover transition duration-300">
+                            <div class="absolute -top-3 -right-3 px-3 py-1 bg-accent text-black text-xs font-bold font-mono rounded-full">
+                                Erbil, Iraq
+                            </div>
+                            <!-- About Me Profile Photo Frame -->
+                            <div class="relative w-28 h-28 rounded-2xl bg-darkbg border-2 border-accent mb-6 overflow-hidden group">
+                                <!-- Replace the src URL below with your actual photo image link -->
+                                <img id="about-profile-img" src="https://placehold.co/300x300/121722/00f0ff?text=Rozh+B." alt="Rozh Burkan Profile" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/300x300/121722/00f0ff?text=Rozh+B.';">
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Rozh Burkan</h3>
+                            <p class="text-xs text-accent font-mono mb-4">Tech Specialist & Infrastructure Architect</p>
+                            <p class="text-subtext text-sm leading-relaxed mb-6">
+                                Currently pursuing advanced studies in Information Technology at <span class="text-white font-semibold">CIS College, Erbil</span>. Dedicated to bridging the gap between hardware infrastructure, software engineering, and modern digital advertising.
+                            </p>
+                            <div class="space-y-3 font-mono text-xs">
+                                <div class="flex items-center justify-between p-2 rounded bg-darkbg/50 border border-cardborder">
+                                    <span class="text-subtext">Location:</span>
+                                    <span class="text-white">Erbil, Kurdistan Region</span>
+                                </div>
+                                <div class="flex items-center justify-between p-2 rounded bg-darkbg/50 border border-cardborder">
+                                    <span class="text-subtext">Education:</span>
+                                    <span class="text-white">CIS College (IT Major)</span>
+                                </div>
+                                <div class="flex items-center justify-between p-2 rounded bg-darkbg/50 border border-cardborder">
+                                    <span class="text-subtext">Specialities:</span>
+                                    <span class="text-accent">Networking, Dev & Growth</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Bio Content & Value Proposition -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <h2 class="text-xs font-mono text-accent uppercase tracking-widest mb-2">// About My Professional Journey</h2>
+                            <h3 class="text-3xl font-extrabold text-white">Comprehensive Technology Expertise Under One Roof</h3>
+                        </div>
+                        <p class="text-subtext text-base leading-relaxed">
+                            Technology isn't just about code or hardware—it's about how interconnected systems drive business goals and solve real-world problems. With hands-on experience in network segmentation, systems diagnostics, custom web engineering, and targeted Meta ads campaigns, I deliver end-to-end value for businesses and clients.
+                        </p>
+
+                        <!-- Key Pillars Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 rounded-lg bg-cardbg border border-cardborder flex items-start space-x-3">
+                                <i class="fa-solid fa-network-wired text-accent text-lg mt-1"></i>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Infrastructure Integrity</h4>
+                                    <p class="text-xs text-subtext mt-1">Secure subnetting, firewall defense, and Cisco topology layout.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-cardbg border border-cardborder flex items-start space-x-3">
+                                <i class="fa-solid fa-code text-accent text-lg mt-1"></i>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Full-Stack Capability</h4>
+                                    <p class="text-xs text-subtext mt-1">Structured backend logic with MySQL paired with responsive frontend UI.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-cardbg border border-cardborder flex items-start space-x-3">
+                                <i class="fa-solid fa-microchip text-accent text-lg mt-1"></i>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">System Optimization</h4>
+                                    <p class="text-xs text-subtext mt-1">High-performance OS tuning for NVIDIA RTX & Linux workstation setups.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-cardbg border border-cardborder flex items-start space-x-3">
+                                <i class="fa-solid fa-chart-line text-accent text-lg mt-1"></i>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Digital Strategy</h4>
+                                    <p class="text-xs text-subtext mt-1">Targeted brand expansion, Meta sponsorship ads, and audience engagement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CORE EXPERIENCE & EXPERTISE CARDS SECTION -->
+        <section id="expertise" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-mono text-accent uppercase tracking-widest mb-2">// Core Pillars</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Domains of Expertise</h3>
+                <p class="text-subtext text-sm sm:text-base mt-3">
+                    A multi-layered skill set covering network topology, system maintenance, digital growth marketing, and software engineering.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- CARD 1: Networking & Systems -->
+                <div class="rounded-2xl bg-cardbg border border-cardborder p-8 hover:border-accent/40 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accentglow border border-accent/30 flex items-center justify-center text-accent text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Networking & Systems Security</h4>
+                        <p class="text-subtext text-sm mb-6 leading-relaxed">
+                            Architecting resilient network configurations and ensuring robust security practices for modern business environments.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-300 font-mono mb-6">
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Cisco Packet Tracer simulation & routing protocols</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>VLAN setup, Subnetting & Network Segmentation</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Multi-Factor Authentication (MFA) & Defense-in-Depth</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Kali Linux audit tools & Ubuntu Server hardening</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-cardborder/60 flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">Cisco</span>
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">Linux Security</span>
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">IAM / MFA</span>
+                    </div>
+                </div>
+
+                <!-- CARD 2: Tech Support & Hardware -->
+                <div class="rounded-2xl bg-cardbg border border-cardborder p-8 hover:border-accent/40 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accentglow border border-accent/30 flex items-center justify-center text-accent text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Technical Support & Hardware</h4>
+                        <p class="text-subtext text-sm mb-6 leading-relaxed">
+                            Deep diagnostic troubleshooting, component repairs, OS installations, and custom performance tuning.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-300 font-mono mb-6">
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Laptop/PC disassembly, thermal management & component repair</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Windows & Linux dual-boot setup & Kernel optimization</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>NVIDIA RTX driver tuning, CUDA environment configuration</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>System failure recovery, disk cloning & data preservation</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-cardborder/60 flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">Hardware Diagnostics</span>
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">NVIDIA RTX</span>
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">OS Maintenance</span>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Social Media & Digital Strategy -->
+                <div class="rounded-2xl bg-cardbg border border-cardborder p-8 hover:border-accent/40 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accentglow border border-accent/30 flex items-center justify-center text-accent text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Social Media & Digital Strategy</h4>
+                        <p class="text-subtext text-sm mb-6 leading-relaxed">
+                            Leveraging data analytics and target market dynamics to drive organic engagement and paid campaign ROI.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-300 font-mono mb-6">
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Meta Business Manager & Sponsored Ads campaigns</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Local business audience targeting (Erbil & KRI markets)</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Brand identity positioning & digital footprint creation</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Performance metrics reporting & cost-per-click optimization</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-cardborder/60 flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">Meta Ads</span>
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">Audience Targeting</span>
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">Growth Analytics</span>
+                    </div>
+                </div>
+
+                <!-- CARD 4: Web & Software Development -->
+                <div class="rounded-2xl bg-cardbg border border-cardborder p-8 hover:border-accent/40 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accentglow border border-accent/30 flex items-center justify-center text-accent text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Web & Software Development</h4>
+                        <p class="text-subtext text-sm mb-6 leading-relaxed">
+                            Building responsive web applications and reliable database structures with clean, maintainable logic.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-300 font-mono mb-6">
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>HTML5, CSS3, JavaScript (ES6+), Modern Frameworks</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Java Object-Oriented Programming (OOP) architectures</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>Python automation scripts & data handling</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-check text-accent"></i>
+                                <span>MySQL Database design, queries, and normalization</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-cardborder/60 flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">JavaScript</span>
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">Java OOP</span>
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">Python</span>
+                        <span class="px-2.5 py-1 rounded bg-darkbg border border-cardborder text-[11px] text-accent font-mono">MySQL</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS & PROJECTS INTERACTIVE SHOWCASE FILTER -->
+        <section id="showcase" class="py-20 bg-cardbg/30 border-y border-cardborder">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-mono text-accent uppercase tracking-widest mb-2">// Interactive Showcase</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Highlights Browser</h3>
+                    <p class="text-subtext text-sm sm:text-base mt-2">Filter through my practical projects, software tools, and network topologies.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+                    <button class="filter-btn active px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-accent text-black transition" data-filter="all">All Items</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-cardbg border border-cardborder text-subtext hover:text-white transition" data-filter="web">Web & Software</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-cardbg border border-cardborder text-subtext hover:text-white transition" data-filter="network">Networking</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-cardbg border border-cardborder text-subtext hover:text-white transition" data-filter="social">Social Marketing</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-cardbg border border-cardborder text-subtext hover:text-white transition" data-filter="hardware">Hardware & OS</button>
+                </div>
+
+                <!-- Items Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="showcase-grid">
+                    
+                    <!-- Item 1 -->
+                    <div class="showcase-card rounded-xl bg-cardbg border border-cardborder p-6 hover:border-accent/50 transition" data-category="web">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-accent">WEB DEV</span>
+                            <i class="fa-solid fa-laptop-code text-subtext"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Custom Portfolio & Portal Engine</h4>
+                        <p class="text-subtext text-xs leading-relaxed mb-4">
+                            Tailwind CSS & JavaScript responsive web portal equipped with single-file layout, dark mode aesthetic, and fast asset loading.
+                        </p>
+                        <div class="flex items-center space-x-2 text-[11px] font-mono text-gray-400">
+                            <span>HTML5</span> • <span>Tailwind</span> • <span>JS</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="showcase-card rounded-xl bg-cardbg border border-cardborder p-6 hover:border-accent/50 transition" data-category="network">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-accent">NETWORKING</span>
+                            <i class="fa-solid fa-diagram-project text-subtext"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Multi-Office VLAN Topology</h4>
+                        <p class="text-subtext text-xs leading-relaxed mb-4">
+                            Simulated network infrastructure in Cisco Packet Tracer containing Inter-VLAN routing, trunking, and secure ACL rules.
+                        </p>
+                        <div class="flex items-center space-x-2 text-[11px] font-mono text-gray-400">
+                            <span>Cisco Packet Tracer</span> • <span>VLANs</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="showcase-card rounded-xl bg-cardbg border border-cardborder p-6 hover:border-accent/50 transition" data-category="social">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-accent">DIGITAL MARKETING</span>
+                            <i class="fa-solid fa-rectangle-ad text-subtext"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Meta Ad Campaign Optimizer</h4>
+                        <p class="text-subtext text-xs leading-relaxed mb-4">
+                            End-to-end sponsored ads strategy for local retail businesses in Erbil, increasing engagement and lead conversions.
+                        </p>
+                        <div class="flex items-center space-x-2 text-[11px] font-mono text-gray-400">
+                            <span>Meta Ads</span> • <span>Analytics</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="showcase-card rounded-xl bg-cardbg border border-cardborder p-6 hover:border-accent/50 transition" data-category="web">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-accent">SOFTWARE / DB</span>
+                            <i class="fa-solid fa-database text-subtext"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">MySQL Student Management System</h4>
+                        <p class="text-subtext text-xs leading-relaxed mb-4">
+                            Java OOP application integrated with MySQL backend database for academic tracking and record maintenance.
+                        </p>
+                        <div class="flex items-center space-x-2 text-[11px] font-mono text-gray-400">
+                            <span>Java</span> • <span>MySQL</span> • <span>OOP</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="showcase-card rounded-xl bg-cardbg border border-cardborder p-6 hover:border-accent/50 transition" data-category="hardware">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-accent">HARDWARE & OS</span>
+                            <i class="fa-solid fa-screwdriver-wrench text-subtext"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">NVIDIA RTX & Linux Workstation Tuning</h4>
+                        <p class="text-subtext text-xs leading-relaxed mb-4">
+                            Optimized dual-boot Linux/Windows setups for high-demand rendering, CUDA compute, and latency reduction.
+                        </p>
+                        <div class="flex items-center space-x-2 text-[11px] font-mono text-gray-400">
+                            <span>Ubuntu</span> • <span>NVIDIA CUDA</span> • <span>Hardware</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="showcase-card rounded-xl bg-cardbg border border-cardborder p-6 hover:border-accent/50 transition" data-category="network">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-accent">CYBERSECURITY</span>
+                            <i class="fa-solid fa-shield-halved text-subtext"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Defense-in-Depth Security Audit</h4>
+                        <p class="text-subtext text-xs leading-relaxed mb-4">
+                            Vulnerability analysis using Kali Linux tools to audit local Wi-Fi networks, password policies, and MFA configurations.
+                        </p>
+                        <div class="flex items-center space-x-2 text-[11px] font-mono text-gray-400">
+                            <span>Kali Linux</span> • <span>MFA</span> • <span>Audit</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES & CONSULTANCY CALCULATOR -->
+        <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <h2 class="text-xs font-mono text-accent uppercase tracking-widest">// Direct Services</h2>
+                    <h3 class="text-3xl font-extrabold text-white">Need Tech Solutions or Digital Support?</h3>
+                    <p class="text-subtext text-sm leading-relaxed">
+                        Whether you are setting up a local office network, need laptop repair, want a custom web application, or wish to expand your brand on social media, I offer tailored technical consulting.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-cardbg border border-cardborder">
+                            <div class="text-accent text-xl">
+                                <i class="fa-solid fa-wifi"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Network & System Setup</h4>
+                                <p class="text-xs text-subtext">Wi-Fi, routers, switches, network security, and firewall setups.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-cardbg border border-cardborder">
+                            <div class="text-accent text-xl">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Hardware Repair & Maintenance</h4>
+                                <p class="text-xs text-subtext">Laptop repair, hardware upgrades, and thermal troubleshooting.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-cardbg border border-cardborder">
+                            <div class="text-accent text-xl">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Meta Ads & Growth Strategy</h4>
+                                <p class="text-xs text-subtext">Paid sponsorship campaigns, targeted ad setup, and brand growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Scope Calculator -->
+                <div class="lg:col-span-6">
+                    <div class="rounded-2xl bg-cardbg border border-cardborder p-8 glow-accent">
+                        <h4 class="text-lg font-bold text-white mb-2 font-mono">&gt; Service Scope Estimator</h4>
+                        <p class="text-xs text-subtext mb-6">Select your required services for an instant project scope breakdown.</p>
+
+                        <div class="space-y-3 mb-6">
+                            <label class="flex items-center justify-between p-3 rounded-lg bg-darkbg border border-cardborder cursor-pointer hover:border-accent/40 transition">
+                                <span class="flex items-center space-x-3 text-xs text-white">
+                                    <input type="checkbox" class="service-calc accent-accent" value="Network Configuration" data-tier="Network">
+                                    <span>Network & Router Configuration</span>
+                                </span>
+                                <span class="text-xs font-mono text-accent">Infrastructure</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3 rounded-lg bg-darkbg border border-cardborder cursor-pointer hover:border-accent/40 transition">
+                                <span class="flex items-center space-x-3 text-xs text-white">
+                                    <input type="checkbox" class="service-calc accent-accent" value="Hardware Diagnostics" data-tier="Support">
+                                    <span>Laptop / PC Maintenance & Support</span>
+                                </span>
+                                <span class="text-xs font-mono text-accent">Hardware</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3 rounded-lg bg-darkbg border border-cardborder cursor-pointer hover:border-accent/40 transition">
+                                <span class="flex items-center space-x-3 text-xs text-white">
+                                    <input type="checkbox" class="service-calc accent-accent" value="Web Application" data-tier="Software">
+                                    <span>Custom Web Development</span>
+                                </span>
+                                <span class="text-xs font-mono text-accent">Dev</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3 rounded-lg bg-darkbg border border-cardborder cursor-pointer hover:border-accent/40 transition">
+                                <span class="flex items-center space-x-3 text-xs text-white">
+                                    <input type="checkbox" class="service-calc accent-accent" value="Social Media Ads" data-tier="Marketing">
+                                    <span>Meta Ads & Growth Campaign</span>
+                                </span>
+                                <span class="text-xs font-mono text-accent">Marketing</span>
+                            </label>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-darkbg/80 border border-cardborder mb-6">
+                            <div class="text-xs text-subtext mb-1">Selected Scope:</div>
+                            <div id="selected-summary" class="text-xs font-mono text-accent font-semibold">No services selected yet.</div>
+                        </div>
+
+                        <a href="#contact" id="estimator-cta" class="w-full py-3 block text-center rounded-lg bg-accent text-black font-bold text-xs uppercase tracking-wider hover:bg-accenthover transition">
+                            Request Quote / Inquiry
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 bg-cardbg/40 border-t border-cardborder">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-accent uppercase tracking-widest mb-2">// Contact & Connect</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Get In Touch</h3>
+                    <p class="text-subtext text-sm sm:text-base mt-2">
+                        Have a project in mind, need technical assistance, or want to discuss network architecture? Send a direct message below.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    
+                    <!-- Contact Info Panel -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="p-6 rounded-2xl bg-cardbg border border-cardborder">
+                            <h4 class="text-lg font-bold text-white mb-4">Direct Contact Details</h4>
+                            
+                            <div class="space-y-4 text-sm">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 rounded bg-darkbg border border-cardborder flex items-center justify-center text-accent text-sm mt-0.5">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-subtext">Name</div>
+                                        <div class="text-white font-medium">Rozh Burkan AbdulSamad</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 rounded bg-darkbg border border-cardborder flex items-center justify-center text-accent text-sm mt-0.5">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-subtext">Affiliation</div>
+                                        <div class="text-white font-medium">CIS College (Information Technology)</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 rounded bg-darkbg border border-cardborder flex items-center justify-center text-accent text-sm mt-0.5">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-subtext">Location</div>
+                                        <div class="text-white font-medium">Erbil, Kurdistan Region, Iraq</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 rounded bg-darkbg border border-cardborder flex items-center justify-center text-accent text-sm mt-0.5">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-subtext">Email / Inquiry</div>
+                                        <a href="mailto:rozhburkan@gmail.com" class="text-accent font-mono hover:underline">rozhburkan@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media & Networks -->
+                        <div class="p-6 rounded-2xl bg-cardbg border border-cardborder">
+                            <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider font-mono">Social & Tech Channels</h4>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 p-3 rounded-lg bg-darkbg border border-cardborder text-subtext hover:text-accent hover:border-accent/40 transition text-xs font-mono">
+                                    <i class="fa-brands fa-linkedin text-base"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 p-3 rounded-lg bg-darkbg border border-cardborder text-subtext hover:text-accent hover:border-accent/40 transition text-xs font-mono">
+                                    <i class="fa-brands fa-github text-base"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://instagram.com" target="https://www.instagram.com/rozh.burkan/?__d=11" rel="noopener noreferrer" class="flex items-center space-x-2 p-3 rounded-lg bg-darkbg border border-cardborder text-subtext hover:text-accent hover:border-accent/40 transition text-xs font-mono">
+                                    <i class="fa-brands fa-instagram text-base"></i>
+                                    <span>Instagram</span>
+                                </a>
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 p-3 rounded-lg bg-darkbg border border-cardborder text-subtext hover:text-accent hover:border-accent/40 transition text-xs font-mono">
+                                    <i class="fa-brands fa-facebook text-base"></i>
+                                    <span>Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Form -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" class="p-8 rounded-2xl bg-cardbg border border-cardborder space-y-4">
+                            <h4 class="text-lg font-bold text-white mb-2">Send a Message</h4>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="contact-name" class="block text-xs font-mono text-subtext mb-1">Your Name *</label>
+                                    <input type="text" id="contact-name" required placeholder="e.g. Dana Ahmed" class="w-full px-4 py-3 rounded-lg bg-darkbg border border-cardborder text-white text-sm focus:outline-none focus:border-accent transition">
+                                </div>
+                                <div>
+                                    <label for="contact-email" class="block text-xs font-mono text-subtext mb-1">Your Email *</label>
+                                    <input type="email" id="contact-email" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-lg bg-darkbg border border-cardborder text-white text-sm focus:outline-none focus:border-accent transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contact-subject" class="block text-xs font-mono text-subtext mb-1">Subject</label>
+                                <select id="contact-subject" class="w-full px-4 py-3 rounded-lg bg-darkbg border border-cardborder text-white text-sm focus:outline-none focus:border-accent transition">
+                                    <option value="General Technical Inquiry">General Technical Inquiry</option>
+                                    <option value="Network Infrastructure Request">Network Infrastructure Setup</option>
+                                    <option value="Web & Database Project">Web & Database Project</option>
+                                    <option value="Social Media & Meta Ads Strategy">Social Media & Meta Ads Strategy</option>
+                                    <option value="Hardware Maintenance">Hardware Diagnostics / PC Maintenance</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="contact-message" class="block text-xs font-mono text-subtext mb-1">Message *</label>
+                                <textarea id="contact-message" rows="4" required placeholder="Describe your project, inquiry, or issue..." class="w-full px-4 py-3 rounded-lg bg-darkbg border border-cardborder text-white text-sm focus:outline-none focus:border-accent transition"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-lg bg-accent text-black font-bold text-sm hover:bg-accenthover transition flex items-center justify-center space-x-2 shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+
+                            <!-- Notification Message Box (replaces alert) -->
+                            <div id="form-status" class="hidden p-4 rounded-lg bg-accentglow border border-accent text-accent text-xs font-mono text-center">
+                                Thank you! Your message has been dispatched to Rozh Burkan. I will respond promptly.
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkbg border-t border-cardborder py-8 text-center text-subtext text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="font-mono">
+                &copy; <span id="year-span">2026</span> <span class="text-white font-semibold">Rozh Burkan AbdulSamad</span>. All rights reserved.
+            </div>
+            <div class="flex items-center space-x-6 text-subtext font-mono">
+                <span>CIS College, Erbil</span>
+                <span>•</span>
+                <a href="#hero" class="hover:text-accent transition">Back to Top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Interactive Portfolio Filter
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const showcaseCards = document.querySelectorAll('.showcase-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active styles from all
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-accent', 'text-black');
+                        b.classList.add('bg-cardbg', 'text-subtext');
+                    });
+
+                    // Add active style to clicked
+                    btn.classList.add('active', 'bg-accent', 'text-black');
+                    btn.classList.remove('bg-cardbg', 'text-subtext');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    showcaseCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Service Estimator Dynamic Summary
+            const calcCheckboxes = document.querySelectorAll('.service-calc');
+            const summaryDiv = document.getElementById('selected-summary');
+
+            function updateEstimator() {
+                const selected = [];
+                calcCheckboxes.forEach(cb => {
+                    if (cb.checked) {
+                        selected.push(cb.value);
+                    }
+                });
+
+                if (selected.length === 0) {
+                    summaryDiv.textContent = 'No services selected yet.';
+                } else {
+                    summaryDiv.textContent = 'Selected Scope: ' + selected.join(' | ');
+                }
+            }
+
+            calcCheckboxes.forEach(cb => {
+                cb.addEventListener('change', updateEstimator);
+            });
+
+            // Contact Form Handling (Custom UI message box)
+            const contactForm = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Show confirmation message inside UI
+                    formStatus.classList.remove('hidden');
+                    contactForm.reset();
+                    updateEstimator();
+
+                    setTimeout(() => {
+                        formStatus.classList.add('hidden');
+                    }, 6000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
